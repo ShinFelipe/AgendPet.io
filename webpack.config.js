@@ -51,13 +51,18 @@ module.exports = {
       {
         test: /.js$/, // Aplica em arquivos JS
         exclude: /node_modules/, // Ignora bibliotecas externas
+        type: "javascript/esm", // Trata como módulo ES
         use: {
           loader: "babel-loader", // Transpila JS moderno para compatibilidade
           options: {
             presets: ["@babel/preset-env"], // Define regras de compatibilidade
+            sourceType: "unambiguous",
           },
         },
       },
     ],
+  },
+  resolve: {
+    extensions: [".js", ".css"],
   },
 };
