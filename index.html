@@ -33,41 +33,143 @@
             Aqui você pode ver todos os clientes e serviços agendados para hoje.
           </p>
         </div>
-        <div>
-          <input type="date" />
+        <div class="main-content-header-date">
+          <label>
+            <img src="/src/assets/calender.svg" alt="Calendário" />
+            <input type="date" id="data" />
+            <img
+              src="/src/assets/arrow-down.svg"
+              alt="Abrir calendário"
+              id="abrir-calendario"
+            />
+          </label>
         </div>
       </div>
 
       <div class="main-content">
-        <div class="agenda">
+        <div class="agenda" id="morning">
           <div class="agenda-title">
-            <h3>
-              <img src="./src/assets/sun.svg" alt="" />
-              Manhã
-            </h3>
+            <h3><img src="./src/assets/sun.svg" alt="" />Manhã</h3>
             <p>08:00 - 12:00</p>
           </div>
+          <div class="agenda-body"></div>
         </div>
-        <div class="agenda">
+
+        <div class="agenda" id="afternoon">
           <div class="agenda-title">
-            <h3>
-              <img src="./src/assets/afternoon.svg" alt="" />
-              Tarde
-            </h3>
+            <h3><img src="./src/assets/afternoon.svg" alt="" />Tarde</h3>
             <p>12:00 - 18:00</p>
           </div>
+          <div class="agenda-body"></div>
         </div>
-        <div class="agenda">
+
+        <div class="agenda" id="night">
           <div class="agenda-title">
-            <h3>
-              <img src="./src/assets/night.svg" alt="" />
-              Noite
-            </h3>
+            <h3><img src="./src/assets/night.svg" alt="" />Noite</h3>
             <p>18:00 - 22:00</p>
           </div>
+          <div class="agenda-body"></div>
         </div>
       </div>
     </main>
+
+    <button type="button" id="new-agend">NOVO AGENDAMENTO</button>
+
+    <dialog>
+      <div class="dialog-title">
+        <h3>Agende um atendimento.</h3>
+        <p>Preencha os dados do cliente para realizar o agendamento:</p>
+      </div>
+
+      <form>
+        <div class="input-group">
+          <label for="nome-tutor">Nome do tutor</label>
+          <input
+            type="text"
+            id="nome-tutor"
+            name="nome-tutor"
+            placeholder="Nome do tutor"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="nome-pet">Nome do pet</label>
+          <input
+            type="text"
+            id="nome-pet"
+            placeholder="Nome do pet"
+            name="nome-pet"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="telefone">Telefone</label>
+          <input
+            type="text"
+            id="telefone"
+            name="telefone"
+            placeholder="Nome do dono"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="descricao-servico">Descrição do serviço</label>
+          <textarea
+            name="descricao-servico"
+            id="descricao-servico"
+            cols="50"
+          ></textarea>
+        </div>
+
+        <div class="input-group">
+          <div class="data-hora-group">
+            <div class="data-hora">
+              <label for="data-agendamento">Data do agendamento</label>
+
+              <div class="data-input">
+                <img src="/src/assets/calender.svg" alt="Calendário" />
+                <input
+                  type="date"
+                  id="data-agendamento"
+                  name="data-agendamento"
+                  required
+                />
+                <img
+                  src="/src/assets/arrow-down.svg"
+                  alt="Abrir calendário"
+                  id="abrir-calendario"
+                />
+              </div>
+            </div>
+            <div class="data-hora">
+              <label for="time-agendamento">Hora do agendamento</label>
+              <div class="data-input">
+                <img src="/src/assets/time.svg" alt="Calendário" />
+                <input
+                  type="time"
+                  id="time-agendamento"
+                  name="time-agendamento"
+                  required
+                />
+                <img
+                  src="/src/assets/arrow-down.svg"
+                  alt="Abrir calendário"
+                  id="abrir-calendario"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-buttons">
+          <button type="submit" id="submit">Agendar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div class="overlay" id="overlay"></div>
     <script type="module" src="/src/index.js"></script>
   </body>
 </html>
